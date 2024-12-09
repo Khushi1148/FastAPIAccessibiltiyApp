@@ -37,6 +37,10 @@ class ImageRequest(BaseModel):
 class TTSRequest(BaseModel):
     text: str
 
+@app.get("/")
+def root():
+    return {"message": "Welcome to the FastAPI backend!"}
+    
 @app.post("/fetch-and-summarize/")
 def fetch_and_summarize(request: QueryRequest):
     """
